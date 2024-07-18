@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#script-div{
+    border:1px solid grey;
+    height:300px;
+    width:400px;
+}
+
+#script-div h1{
+    opacity: 0;
+    animation: showing 1s ease-in-out forwards ;
+}
+
+@keyframes showing {
+    0% {
+      opacity: 0;
+
+
+
+
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+
+
+
