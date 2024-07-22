@@ -1,55 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link href="./src/output.css" rel="stylesheet">
-    <script src="./script.js" type="module"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="./App.js" type="module"></script>
     <title>Namaste react</title>
-</head>
-<body>
-    <div class="text-3xl font-bold underline bg-pink-400">
-        <h1>HELLO World!</h1>
-    </div>
-    <div class="react-root">
-        
-    </div>
-    <div id="root">
-        <h1>"Hello World"</h1>
-        <div id="script-div">
-            <h1>"script div"</h1>
-        </div>
-        <div class="text-3xl font-bold underline">
-            <div class="react-root"></div>
-        </div>
-        <div id="second">
-            <p>1000</p>
-        </div>
-        <script>
-            
-            const div=document.querySelector('#script-div');
-            const newHeading=document.createElement('h1');
-            newHeading.textContent = "Heading by JS";
-            div.appendChild(newHeading);
-            
-        </script>
-        <p class="text-3xl font-bold underline bg-sky-400">"This is the end of the html"</p>
-        <div id="second">
-            <p id="third" style="color:red; width:50px; overflow:hidden; height:120px;">1000 </p>
-        </div>
-    </div>
-    <div class="react-root" style="color:red;"></div>
-    <script crossorigin 
-        src="https://unpkg.com/react@18/umd/react.development.js">
-    </script>
-    <script 
-        crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
-    </script>
-    <script src="script.js">
-        
-    </script>
-    
-    
-</body>
+  </head>
+  <body>
+    <div id="root" style="color: red"></div>
+  </body>
 </html>
