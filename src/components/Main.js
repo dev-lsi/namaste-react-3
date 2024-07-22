@@ -1,77 +1,59 @@
-import RestaurantCard from "./RestaurantCard";
-import { resList, IMAGES_BASE_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
+import CardsContainer from "./CardsContainer";
+import LoadMoreButton from "./LoadMoreButton.js";
+import {getData} from "../utils/getData.js";
 
 Main = () => {
   
-
-  const [currResList, setCurrResList] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
   const [offset, setOffset] = useState(1);
-
+  
+  
   useEffect(() => {
-    getData();
-  }, [offset]);
-
-  async function getData() {
-    const res = await fetch(
-      "https://www.swiggy.com/api/seo/getListing?lat=12.960059122809971&lng=77.57337538383284",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          'widgetOffset': {
-            'NewListingView_category_bar_chicletranking_TwoRows': "",
-            'NewListingView_category_bar_chicletranking_TwoRows_Rendition': "",
-            'Restaurant_Group_WebView_PB_Theme': "",
-            'Restaurant_Group_WebView_SEO_PB_Theme': "",
-            'collectionV5RestaurantListWidget_SimRestoRelevance_food_seo':
-            JSON.stringify(offset),
-            'inlineFacetFilter': "",
-            'restaurantCountWidget': "",
-          },
-          'nextOffset': "CJY7ELQ4KICA0dzfjPbeKzDUEDgD",
-        }),
+    async function handleData(){
+      try {
+        const newRestaurants = await  getData(offset);
+        //console.log(newRestaurants)
+        setRestaurants([...restaurants,...newRestaurants]);
+        
+      } catch (error) {
+        console.log(error.message)
+        handleData();
+        //throw new Error("from definition of handle data")
       }
-    );
-    const data = await res.json();
-    console.log(
-      data.data.success.cards[0].card.card.gridElements.infoWithStyle
-        .restaurants
-    );
-    const newRestaurants =
-      data.data.success.cards[0].card.card.gridElements.infoWithStyle
-        .restaurants;
+      
+    }
 
-    const newArr = [...currResList, ...newRestaurants];
+
+    try {
+      handleData();
+    } catch (error) {
+      console.log(error.message)
+      throw new Error("thrown by catch in handle data")
+    }
     
-
-    setCurrResList(newArr);
-    console.log(currResList);
-  }
-
-  return (
-    <div className="main">
-      <div className="cards-container">
-        {currResList.map((r) => {
-          return (
-            <RestaurantCard
-              key={r.info.id}
-              name={r.info.name}
-              image={IMAGES_BASE_URL + r.info.cloudinaryImageId}
-              cuisines={r.info.cuisines.join(", ")}
-              rating={r.info.avgRating}
-              deliveryTime={r.info.sla.deliveryTime}
-            />
-          );
-        })}
+    
+  }, [offset]);
+  
+  console.log("before render")
+  if(restaurants.length===0){
+    console.log('empty')
+    return (
+      <div>
+        <h1>Shirm</h1>
       </div>
-      <button className="more-btn" onClick={() => setOffset(offset+15)}>
-        More
-      </button>
-    </div>
-  );
+    )
+  }else{
+    console.log('with data')
+    return (
+      <div className="main">
+        <CardsContainer restaurants={restaurants} />
+        <LoadMoreButton offset={offset} setOffset={setOffset}/>
+      </div>
+    );
+  }
+  
+  
 };
 
 export default Main;
