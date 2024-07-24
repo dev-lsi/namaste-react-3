@@ -1,0 +1,114 @@
+*,div{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.menu-page-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4em;
+    padding-block: 4em;
+}
+
+/* HERO */
+.restaurant-hero{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3em;
+  background-color: lightgray;
+  padding-block:2em;
+}
+
+.restaurant-hero img{
+  max-width:120px;
+}
+.restaurant-info-container{
+    font-size: 1em;
+}
+
+
+/* MENU */
+.menu-container{
+  width:100%;
+  display: flex;
+  padding-block: 2em;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.8em;
+  border: 1px solid orangered;
+}
+
+.menu-container h1{
+  width: 90%;
+  padding-left: 2em;
+  padding-block: 0.2em;
+  color:darkblue;
+  background-color: rgb(200, 200, 200);
+  margin-bottom: 0.6em;
+  font-size: 2.6em;
+}
+
+
+.category-container{
+  width:90%;
+  padding-left: 4em;
+  background-color: rgb(235, 249, 249);
+}
+
+.category-name{
+  text-indent: 1em;
+  text-align:left;
+  color:darkblue;
+  font-size: 1.8em;
+  padding-block: 0.4em;
+  cursor: pointer;
+}
+.category-name:hover{
+  color:darkblue;
+  background-color: rgb(200, 249, 249);
+}
+
+.menu-items-container{
+  display:flex;
+  flex-direction: column;
+  padding-block: 2em;
+  row-gap: 2em;
+  transition: display linear 2s;
+}
+.hidden{
+  display: none;
+  transition: all linear 2s;
+}
+
+.item-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 2em;
+  column-gap: 2em;
+  background-color: rgb(176, 214, 216);
+  padding-block: 1em;
+  
+}
+
+.dish-image{
+  align-self: center;
+  width:8em;
+  height:8em;
+  border-radius: 12px;
+}
+.dish-info-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-wrap: nowrap;
+  min-width: 300px;
+  max-width: 20vw;
+}
+
+
+

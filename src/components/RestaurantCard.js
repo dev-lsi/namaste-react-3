@@ -1,9 +1,11 @@
 import ImageLoader from "./ImageLoader";
+import { Link } from "react-router-dom";
 
 const RestaurantCard = (props) => {
-  const { name, image, cuisines, rating, deliveryTime } = props;
+  const { name, image, cuisines, rating, deliveryTime, link,id } = props;
 
   return (
+  <Link to={`/restaurants/${id}`}>
     <div className="restaurant-card">
       <div className="img-container">
         <ImageLoader  image={image} />
@@ -24,6 +26,7 @@ const RestaurantCard = (props) => {
         </h3>
       </div>
     </div>
+  </Link>
   );
 };
 

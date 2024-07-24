@@ -3,6 +3,7 @@ import { Base_URL } from "./constants";
 export async function getData(offset) {
   
   try {
+    console.log(`Fetched with offset = ${offset}`);
     const response = await fetch(
       Base_URL,
       {

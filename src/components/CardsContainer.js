@@ -17,6 +17,8 @@ const CardsContainer=(props)=>{
               cuisines={r.info.cuisines.join(", ")}
               rating={r.info.avgRating}
               deliveryTime={r.info.sla.deliveryTime}
+              id={r.info.id}
+              resURL={r.info.link}
             />
           );
         })}

@@ -11,23 +11,18 @@ Main = () => {
   const [filtered,setFiltered] = useState(restaurants);
   
   useEffect(() => {
+
     async function handleData(){
       try {
-
         const newRestaurants = await  getData(offset);
-        console.log(newRestaurants)
         setRestaurants([...restaurants,...newRestaurants]);
         setFiltered([...restaurants,...newRestaurants]);
-        
-        
+        console.log(filtered);
       } catch (error) {
         console.log("Main.js=>catch: " + error.message);
         handleData();
-        
       }
-      
-    }
-
+    };
 
     try {
       handleData();
@@ -35,7 +30,6 @@ Main = () => {
       console.log(error.message)
       throw new Error("thrown by catch in handle data")
     }
-    
     
   }, [offset]);
   
