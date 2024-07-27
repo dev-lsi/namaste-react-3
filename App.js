@@ -17,7 +17,7 @@ import { lazy, Suspense} from "react";
       <div>
         <Header></Header>
         <Outlet/>
-        <Footer></Footer>
+        <Footer></Footer> 
       </div>
   );
 };

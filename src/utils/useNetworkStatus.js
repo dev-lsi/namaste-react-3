@@ -2,17 +2,29 @@ import { useEffect, useState } from "react";
 
 const useNetworkStatus=()=>{
 
-    const[isConnected,setIsConnected]=useState(true);
+    // const[isConnected,setIsConnected]=useState(true);
+
+    // useEffect(()=>{
+    //     window.addEventListener('offline',()=>{
+    //         setIsConnected(false);
+    //     })
+    //     window.addEventListener('online',()=>{
+    //         setIsConnected(true);
+    //     })
+    // },[]);
+    // return isConnected;
+    const[ns,setNS] = useState(true);
 
     useEffect(()=>{
-        window.addEventListener('offline',()=>{
-            setIsConnected(false);
-        })
         window.addEventListener('online',()=>{
-            setIsConnected(true);
-        })
-    },[]);
-    return isConnected;
+            setNS(true);
+        });
+        window.addEventListener('offline',()=>{
+            setNS(false);
+        });
+    });
+
+    return ns;
 }
 
 export default useNetworkStatus;

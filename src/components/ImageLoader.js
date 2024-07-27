@@ -10,6 +10,7 @@ const ImageLoader = ({ image }) => {
     <div style={{width:'100%', height:'100%'}}>
       <h1 className="loader" style={{ display: loaderDisplay}}>Loading</h1>
       <img
+      className=" object-fill"
         src={image}
         alt={"logo"}
         style={{ display:imageDisplay }}

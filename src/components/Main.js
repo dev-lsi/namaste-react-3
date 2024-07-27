@@ -3,13 +3,16 @@ import CardsContainer from "./CardsContainer";
 import LoadMoreButton from "./LoadMoreButton.js";
 import {getData} from "../utils/getData.js";
 import SearchContainer from "./SearchContainer.js";
+import Availability from "./Availability.js";
 
 Main = () => {
   
   const [restaurants, setRestaurants] = useState([]);
   const [offset, setOffset] = useState(1);
   const [filtered,setFiltered] = useState(restaurants);
+
   
+  console.log(filtered);
   useEffect(() => {
 
     async function handleData(){
@@ -17,7 +20,7 @@ Main = () => {
         const newRestaurants = await  getData(offset);
         setRestaurants([...restaurants,...newRestaurants]);
         setFiltered([...restaurants,...newRestaurants]);
-        console.log(filtered);
+        
       } catch (error) {
         console.log("Main.js=>catch: " + error.message);
         handleData();
@@ -44,7 +47,7 @@ Main = () => {
   }else{
     
     return (
-      <div className="main">
+      <div className="main flex-col gap-y-6 bg-blue-300">
         <SearchContainer 
         restaurants={restaurants} 
         setFiltered={setFiltered}/>

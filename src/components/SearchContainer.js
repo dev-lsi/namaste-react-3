@@ -9,7 +9,7 @@ const SearchContainer=(props)=>{
 
 
     return (
-        <div className={'search-container'}>
+        <div className={'search-container bg-slate-700 b'}>
           <input type="text" onChange={(e)=>{
             setSearchText(e.target.value);
           }} value={searchText}></input>
