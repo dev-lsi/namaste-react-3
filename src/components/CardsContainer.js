@@ -6,11 +6,10 @@ import Availability from "./Availability.js";
 const CardsContainer=(props)=>{
 
     const CardWithAvailability=Availability(RestaurantCard)
-
     const {restaurants} = props;
     
     return (
-        <div className="cards-container flex flex-wrap justify-between px-6 gap-6">
+        <div className="cards-container">
         {restaurants.map((r) => {
 
           const restaurantCard=<RestaurantCard

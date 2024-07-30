@@ -1,0 +1,151 @@
+.home{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3em;
+    background-color: rgb(146, 152, 140);
+}
+/* SEARCH CONTAINER */
+.search-container{
+    display: flex;
+    column-gap: 0.5em;
+    padding-inline: 2em;
+    padding-block: 1em;
+    flex-basis: 100%;
+    background-color: rgb(110, 120, 100);
+}
+
+.search-input{
+    border:none;
+    outline: none;
+    background: rgb(240, 240, 240);
+}
+
+.search-btn{
+    padding: 0.4em 0.8em;
+    background-color: blue;
+    border:none;
+    border-radius: 0.4em;
+    color:aqua;
+ }
+ 
+ .search-btn:hover{
+     background-color: aqua;
+     color:blue;
+  }
+
+  /* Cards container */
+
+  .cards-container{
+    display:flex;
+    flex-basis: 96%;
+    flex-wrap:wrap;
+    justify-content: center;
+    padding-block: 4em;
+    column-gap: 3em;
+    row-gap:6em;
+    background-color: rgb(214, 216, 213);
+  }
+
+  
+
+  .restaurant-card{
+    display:flex;
+    flex-wrap: wrap;
+    width:12em;
+    border:1px solid rgb(45, 45, 47);
+    text-decoration: none;
+    color:darkblue;
+    height: 100%;
+    padding-bottom: 1em;
+  }
+
+  .restaurant-card .image-loader{
+    width: 12em;
+    height:8em;
+    overflow: hidden;
+  }
+
+  .image-loader img{
+    object-fit:cover;
+    object-position: center;
+  }
+
+  .restaurant-info-container{
+    width: 12em;
+    padding-inline: 1em;
+
+  }
+
+  .restaurant-info-container h2{
+    color:rgb(110, 2, 2);
+    font-size: 1.2em;
+  }
+  .restaurant-info-container h3{
+    color:blue;
+    font-size: 0.8em;
+  }
+
+  .statistics{
+    display:flex;
+    column-gap: 2em;
+    margin-block: 1em;
+    border-bottom: 1px solid rgb(45, 45, 47);
+  }
+
+  .ban{
+    width:12em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .ban h1{
+
+    position: absolute;
+    left:-3.2em;
+    top:1.4em;
+    background-color: green;
+    color:white;
+    font-size: 1em;
+    padding-inline: 3em;
+    transform: rotateZ(-45deg);
+    z-index: 0;
+  }
+
+  .green{
+    color: green;
+    font-size: 1.4em;
+  }
+
+  .orange{
+    color:orangered;
+    font-size: 1.4em;
+  }
+
+  .actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:4em;
+    padding-block: 0.2em;
+    background-color: rgb(110, 120, 100);
+   
+  }
+
+  .actions button{
+    height:fit-content;
+    padding: 0.4em 0.8em;
+    margin-inline: auto;
+    background-color: blue;
+    border:none;
+    border-radius: 0.4em;
+    color:aqua;
+ }
+ 
+ .actions button:hover{
+     background-color: aqua;
+     color:blue;
+  }
+

@@ -7,10 +7,12 @@ const ImageLoader = ({ image }) => {
 
 
   return (
-    <div style={{width:'100%', height:'100%'}}>
-      <h1 className="loader" style={{ display: loaderDisplay}}>Loading</h1>
+    <div className="image-loader">
+      <div className="loader" style={{ display: loaderDisplay}}>
+          <img className="" src={logo}></img>
+      </div>
       <img
-      className=" object-fill"
+      className=""
         src={image}
         alt={"logo"}
         style={{ display:imageDisplay }}

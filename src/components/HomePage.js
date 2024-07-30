@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import CardsContainer from "./CardsContainer";
+import CardsContainer from "./CardsContainer.js";
 import LoadMoreButton from "./LoadMoreButton.js";
 import {getData} from "../utils/getData.js";
 import SearchContainer from "./SearchContainer.js";
-import Availability from "./Availability.js";
 
-Main = () => {
+
+HomePage = () => {
   
   const [restaurants, setRestaurants] = useState([]);
   const [offset, setOffset] = useState(1);
@@ -41,16 +41,14 @@ Main = () => {
     
     return (
       <div>
-        <h1>Shirm</h1>
+        <h1>Shirm </h1>
       </div>
     )
   }else{
     
     return (
-      <div className="main flex-col gap-y-6 bg-blue-300">
-        <SearchContainer 
-        restaurants={restaurants} 
-        setFiltered={setFiltered}/>
+      <div className="home">
+        <SearchContainer restaurants={restaurants} setFiltered={setFiltered}/>
         <CardsContainer restaurants={filtered} />
         <LoadMoreButton offset={offset} setOffset={setOffset}/>
       </div>
@@ -60,4 +58,4 @@ Main = () => {
   
 };
 
-export default Main;
+export default HomePage;

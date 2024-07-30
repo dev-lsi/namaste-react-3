@@ -1,20 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
-import Main from "./src/components/Main";
+import HomePage from "./src/components/HomePage.js";
 import Footer from "./src/components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
-import Home from "./src/components/Home.js";
 //import About from "./src/components/About.js";
 import Contacts from "./src/components/Contacts.js";
 import ErrorPage from "./src/components/ErrorPage.js";
-import Menu from "./src/components/Menu.js";
+import MenuPage from "./src/components/MenuPage.js";
 import { lazy, Suspense} from "react";
 
  const About = lazy(()=>import("./src/components/About.js"));
  const App = () => {
   return (
-      <div>
+      <div className="app">
         <Header></Header>
         <Outlet/>
         <Footer></Footer> 
@@ -30,7 +29,7 @@ const appRouter = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Main/>,
+        element:<HomePage/>,
       },
       {
         path:"/about",
@@ -42,7 +41,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/restaurants/:id",
-        element:<Menu/>
+        element:<MenuPage/>
       }
     ]
   },

@@ -9,15 +9,19 @@ const SearchContainer=(props)=>{
 
 
     return (
-        <div className={'search-container bg-slate-700 b'}>
-          <input type="text" onChange={(e)=>{
-            setSearchText(e.target.value);
-          }} value={searchText}></input>
+        <div className={'search-container'}>
+          <input className="search-input" 
+                 type="text" 
+                 placeholder="Search.."
+                 value={searchText} 
+                 onChange={(e)=>setSearchText(e.target.value)} 
+          ></input>
           <button className="search-btn" onClick={()=>{
             console.log('handleClick');
-            setFiltered(restaurants.filter(x=>x.info.name.includes(searchText)));
-            
-          }}>Search</button>
+            setFiltered(restaurants.filter(x=>x.info.name.includes(searchText)));}}
+          >
+            Search
+          </button>
         </div>
     )
 }
