@@ -12,7 +12,8 @@ const Category = ({ categoryData }) => {
       </div>
       <div className="category-items">
       {category.itemCards.map((i) => {
-        return <ItemCard key={category.id} itemData={i} />;
+        const itemID=i.card.info.id;
+        return <ItemCard key={itemID} itemData={i} />;
       })}
       </div>
     </div>

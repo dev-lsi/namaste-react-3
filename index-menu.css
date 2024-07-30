@@ -51,6 +51,7 @@
 }
 
 .item{
+    flex-basis: 100%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;

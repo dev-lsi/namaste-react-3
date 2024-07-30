@@ -8,11 +8,12 @@ const ImageLoader = ({ image }) => {
 
   return (
     <div className="image-loader">
-      <div className="loader" style={{ display: loaderDisplay}}>
-          <img className="" src={logo}></img>
-      </div>
+      <h1 className="loader-img" style={{ display: loaderDisplay}}>
+       
+      </h1>
+     
       <img
-      className=""
+        className="loader-img"
         src={image}
         alt={"logo"}
         style={{ display:imageDisplay }}
@@ -20,7 +21,7 @@ const ImageLoader = ({ image }) => {
           setImageDisplay('block');
           setLoaderDisplay('none');
         }}
-      ></img>
+      />
     </div>
   );
 };
