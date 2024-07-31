@@ -2,7 +2,7 @@ import ImageLoader from "./ImageLoader";
 import { Link } from "react-router-dom";
 
 const RestaurantCard = (props) => {
-  const { name, image, cuisines, rating, deliveryTime, link,id } = props;
+  const { name, image, cuisines, rating, deliveryTime, id } = props;
 
   return (
   <Link to={`/restaurants/${id}`} className="restaurant-card">

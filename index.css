@@ -2,6 +2,7 @@
 @import "index-home.css";
 @import "index-menu.css";
 @import "./index-footer.css";
+@import "./index-item.css";
 
 
 *,a,h1,h2,h3,h4,h5,h6,span,p,div,img{
