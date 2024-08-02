@@ -1,39 +1,35 @@
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 
-const Category = ({ categoryData, hasOpen, setHasOpen, }) => {
+const Category = ({ categoryData, categoryIndex,setOpenIndex,openIndex }) => {
 
 
   const category = categoryData.card.card;
-  const [isOpen,setIsOpen] = useState(false);
   
-
-  useEffect(()=>{
-     if(hasOpen===true){
-      console.log("has open")
-      setIsOpen(false);
-      };
-  },[hasOpen]);
+  const CategoryItems=({itemsData})=>{
+    return (
+      <div className={`category-items`}>
+      {itemsData.itemCards.map((i) => {
+        const itemID=i.card.info.id;
+        return <ItemCard key={itemID} itemData={i} />;
+      })}
+      </div>
+    )
+  }
 
   return (
     <div className="category">
       <div className="category-header">
           <h1 className="category-title" onClick={()=>{
-            
-            setIsOpen(!isOpen)
-            setHasOpen(!hasOpen)
-           
-             
+            if(categoryIndex == openIndex){
+              setOpenIndex(null);
+            }else
+            setOpenIndex(categoryIndex);
           }}>
             {category.title}
           </h1>
       </div>
-      <div className={`category-items ${isOpen?"":"hidden"}`}>
-      {category.itemCards.map((i) => {
-        const itemID=i.card.info.id;
-        return <ItemCard key={itemID} itemData={i} />;
-      })}
-      </div>
+      {categoryIndex == openIndex&&<CategoryItems itemsData={category}/>}
     </div>
   );
 };

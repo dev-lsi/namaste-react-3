@@ -3,17 +3,18 @@ import Category from "./Category";
 
 const Categories = ({rCategories}) => {
    
-  const [hasOpen, setHasOpen] = useState(false);
+  const [openIndex , setOpenIndex] = useState(100);
 
   return (
     <div className="categories">
-      {rCategories.map((c) => {
+      {rCategories.map((c,index) => {
         const categoryTitle = c.card.card.title;
         return <Category 
                 key={categoryTitle} 
                 categoryData={c}
-                hasOpen={hasOpen}
-                setHasOpen={setHasOpen} 
+                categoryIndex={index}
+                setOpenIndex={setOpenIndex}
+                openIndex={openIndex}
                 />;
       })}
     </div>

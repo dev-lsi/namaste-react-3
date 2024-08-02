@@ -3,12 +3,26 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
     background-color: lightgray;
     padding: 1em;
 }
 .item-info{
     flex-basis: 50%;
+}
+
+.data-set{
+    display:flex;
+    column-gap: 1em;
+    align-items: center;
+}
+
+.data-set h4{
+    font-size: 0.9em;
+}
+
+.data-set span{
+    font-size: 1.6em;
 }
 
 .item .image-container{
@@ -20,4 +34,25 @@
 .item .image-container img{
     width:100%;
     height: 100%;
+    
+}
+
+.item .description-header{
+    color:rgb(19, 88, 0);
+    padding-block: 1em;
+}
+
+.descriptio-text{
+    background-color: rgb(29, 1, 81);
+    padding-block: 1em;
+    padding-left: 2em;
+    color:white;
+}
+
+.green{
+    color:rgb(2, 153, 2);
+}
+
+.orange-red{
+    color:orangered;
 }

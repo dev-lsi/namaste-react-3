@@ -15,15 +15,25 @@ const ItemCard = ({ itemData }) => {
       <div className="item-info">
         <h2 className="name">{name}</h2>
         <div className="data-set">
-            <h3>{isVeg? "Vegetarian" : "Not Vegy"}</h3>
-            <h3>{inStock?"Available":"Not Avaiable"}</h3>
-            <h3>Price {price?price:defaultPrice&&defaultPrice} &#8377;</h3>
-            <h3>
+            <h4>Veg:
+              {
+              isVeg
+              ?<span className="green"> Yes</span>
+              :<span className="orange-red"> No</span>
+              }
+            </h4>
+            <h4>
               {
               ratings.aggregatedRating.rating
-              &&`Rating: ${ratings.aggregatedRating.rating}`
+              &&<h4>
+                Rating: <span>{ratings.aggregatedRating.rating}</span>
+              </h4>
               }
-            </h3>
+            </h4>
+            <h4>Price:  <span>
+                         {price?price:defaultPrice&&defaultPrice}</span>
+                        <span className="green"> &#8377;</span> 
+            </h4>
         </div>
         {
           (description&&description.length!==0)&&

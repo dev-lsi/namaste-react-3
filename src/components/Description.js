@@ -10,7 +10,11 @@ const Description=({data})=>{
     
     return (
         <div className="description" onClick={()=>toggle()}>
-            <h1 className="description-header">Description</h1>
+            <h4 className="description-header">
+                {
+               !isOpen?"Show Details >>":"Hide Details <<"
+                }
+            </h4>
             {
                 !isOpen
                     ?""
