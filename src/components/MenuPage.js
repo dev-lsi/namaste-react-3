@@ -2,29 +2,30 @@ import useMenu from "../utils/useMenu";
 import { useParams } from "react-router-dom";
 import { IMAGES_BASE_URL } from "../utils/constants";
 import siteLogo from "../assets/logo.png";
-import Category from "./Category";
+
+import Categories from "./Categories";
 
 const MenuPage = () => {
 
   const restaurantId = useParams();
 
   const menuData = useMenu(restaurantId);
-  console.log(menuData);
+  //console.log(menuData);
 
   const extractData = (data) => {
     const allCards =
       data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-    console.log(allCards);
+    //console.log(allCards);
 
     const rCategories = allCards.filter(
       (c) =>
         c?.card?.card["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-    console.log(rCategories);
+    //console.log(rCategories);
 
     const rInfo = data?.cards[2]?.card?.card?.info;
-    console.log(rInfo);
+    //console.log(rInfo);
 
     return (
       //creating menu page
@@ -70,12 +71,7 @@ const MenuPage = () => {
           </div>
         </div>
         <h1 className="">Categories</h1>
-        <div className="categories">
-          {rCategories.map((c) => {
-            const categoryTitle = c.card.card.title;
-            return <Category key={categoryTitle} categoryData={c} />;
-          })}
-        </div>
+        <Categories rCategories={rCategories}/>
       </div>
     );
 

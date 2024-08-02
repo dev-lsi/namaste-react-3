@@ -50,3 +50,11 @@
     row-gap: 1em;
 }
 
+.visible{
+    display:block;
+}
+
+.hidden{
+    display:none;
+}
+
