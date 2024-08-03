@@ -1,3 +1,7 @@
+.html{
+    transition: all 1s ease-in-out;
+}
+
 .item{
     flex-basis: 100%;
     display: flex;
@@ -6,9 +10,36 @@
     align-items:flex-start;
     background-color: lightgray;
     padding: 1em;
+    animation: apear 3s linear;
+    background-image:url("./src/assets/paper01.png");
+    object-fit:cover;
+    object-position: center;
+    overflow: hidden;
 }
+
 .item-info{
     flex-basis: 50%;
+    display:flex;
+    flex-direction: column;
+    row-gap: 0.8em;
+}
+
+
+
+.item .name{
+    color:antiquewhite;
+    text-shadow: 1px 1px 5px rgb(12, 12, 12), 0 0 1em rgb(28, 28, 29), 0 0 0.2em rgb(44, 44, 45);
+}
+
+.item .data-set{
+    padding-left: 1em;
+    text-shadow: 12px 12px 5px white;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+@keyframes apear {
+    from { opacity:0}
+    to {opacity:1}
 }
 
 .data-set{
@@ -38,21 +69,57 @@
 }
 
 .item .description-header{
-    color:rgb(19, 88, 0);
-    padding-block: 1em;
+    color:rgb(17, 76, 1);
 }
 
-.descriptio-text{
-    background-color: rgb(29, 1, 81);
-    padding-block: 1em;
+.description-text{
+    background-color: rgba(255,255,255, 0.9);
     padding-left: 2em;
-    color:white;
+    padding-block: 0.6em;
+    color:rgb(14, 1, 55);
+    line-height: 1.2em;
+    animation : apear 2s linear,
+               expand 1s linear,
+              
 }
+
+@keyframes expand {
+    from {transform:scaleY(0)}
+    to {transform:scaleY(100%)}
+}
+
+@keyframes get-in {
+    from {transform:translateX(-200%)}
+    to {transform:translateX(0)}
+}
+
+@keyframes get-out {
+    from {transform:translateX(0%)}
+    to {transform:translateX(-200%)}
+}
+
+.get-in{
+    animation: get-in 1.2s ease-in-out;
+}
+
+.get-out{
+    animation: get-out 1.2s ease-in-out;
+}
+    
+
 
 .green{
-    color:rgb(2, 153, 2);
+    color:rgb(1, 95, 1);
 }
 
 .orange-red{
-    color:orangered;
+    color:rgb(128, 35, 2);
 }
+
+.anchor-wraper{
+    font-size: 1.2em;
+    color:rgb(1, 1, 89);
+    text-decoration: none;
+    
+}
+

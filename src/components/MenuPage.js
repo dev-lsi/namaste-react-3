@@ -70,7 +70,7 @@ const MenuPage = () => {
             <h2 className="">{"Cuisines: " + rInfo?.cuisines?.join(", ")}</h2>
           </div>
         </div>
-        <h1 className="">Categories</h1>
+        <h1 className="categories-h1">Categories</h1>
         <Categories rCategories={rCategories}/>
       </div>
     );

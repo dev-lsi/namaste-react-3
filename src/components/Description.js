@@ -17,8 +17,8 @@ const Description=({data})=>{
             </h4>
             {
                 !isOpen
-                    ?""
-                    :<p className="descriptio-text">{data}</p>
+                    ?<p className="get-out">{data}</p>
+                    :<p className="description-text get-in">{data}</p>
             }
         </div>
     )

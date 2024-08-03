@@ -26,7 +26,7 @@ const Header = () => {
         </nav>
         <div className="header-actions">
         <button className="login-btn">Login</button>
-        {netStatus ? <span>🥦</span>: <span>🌑 </span>}
+        {netStatus ? <span>online:✅</span>: <span>offline🔴</span>}
         </div>
         
       </div>

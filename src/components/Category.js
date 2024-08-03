@@ -18,16 +18,23 @@ const Category = ({ categoryData, categoryIndex,setOpenIndex,openIndex }) => {
   }
 
   return (
-    <div className="category">
+    <div className="category" id={category.title}>
+      
       <div className="category-header">
-          <h1 className="category-title" onClick={()=>{
+        {/* <a className="anchor-wraper" href={`#${category.title}`}> */}
+        <h1 className="category-title" onClick={(e)=>{
+            const rect = e.target.getBoundingClientRect();
+            const scrollTop = window.scrollY;
+            window.scrollTo( 0 ,0-(rect.top + scrollTop));
             if(categoryIndex == openIndex){
               setOpenIndex(null);
-            }else
-            setOpenIndex(categoryIndex);
+            }else{setOpenIndex(categoryIndex)}
           }}>
             {category.title}
           </h1>
+          <span>🔻</span>
+        {/* </a> */}
+          
       </div>
       {categoryIndex == openIndex&&<CategoryItems itemsData={category}/>}
     </div>

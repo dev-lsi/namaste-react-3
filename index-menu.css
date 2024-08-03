@@ -5,14 +5,31 @@
     padding-block: 2em;
 }
 
+@keyframes apearMenu {
+    from 0% {transform:scaleX(0%);}
+    to 100% {transform:scaleX(50%);}
+}
+
 .image-container{
     width:6em;
     height:6em;
+    animation: apearMenu 3s linear;
 }
+
+@keyframes slidein {
+    from {
+      transform: translateX(-200%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
 
 .hero-image{
     width:6em;
     height:6em;
+    animation: slidein 1s ease-in-out;
 }
 
 .restaurant-data .statistics{
@@ -24,23 +41,38 @@
 }
 
 /* CATEGORIES */
+.categories-h1{
+    text-align: center;
+    color:rgb(1, 1, 95);
+}
 
 .categories{
     padding-block: 3em;
     width: 100%;
     display:flex;
     flex-wrap: wrap;
-    row-gap: 2em;
+    row-gap: 1em;
     justify-content: center;
 }
 
 .category{
-    width: 90%;
+    width: 80%;
+    animation: slidein 1s ease-in-out;
 }
 
 .category-header{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    background-color:burlywood;
+    padding-block: 0.4em;
+    padding-inline: 1em;
+    
+    background: linear-gradient(to bottom,
+         rgb(239, 247, 209) 40%,
+         rgb(137, 137, 117) 80%,
+         rgb(224, 224, 186) 100%
+    
+    );
 }
 
 .category-items{
@@ -50,6 +82,8 @@
     row-gap: 1em;
 }
 
+
+
 .visible{
     display:block;
 }
@@ -57,4 +91,6 @@
 .hidden{
     display:none;
 }
+
+
 
