@@ -4,11 +4,13 @@ import logo  from "../assets/logo.png";
 import useNetworkStatus from "../utils/useNetworkStatus.js";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext.js";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
   const netStatus = useNetworkStatus();
   const userContext = useContext(UserContext);
+  const cartData = useSelector((store)=>store.cartSlice.items)
     
   return (
       <div className="header">
@@ -31,6 +33,7 @@ const Header = () => {
         <button className="login-btn">Login</button>
         {netStatus ? <span>online:✅</span>: <span>offline🔴</span>}
         <h4>{userContext.userName}</h4>
+        <h3>Cart:({cartData.length} Items)</h3>
         </div>
         
         

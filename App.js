@@ -10,6 +10,9 @@ import ErrorPage from "./src/components/ErrorPage.js";
 import MenuPage from "./src/components/MenuPage.js";
 import { lazy, Suspense } from "react";
 import UserContext from "./src/utils/UserContext.js";
+import { Provider } from "react-redux";
+import appStore from "./src/utils/AppStore.js";
+
 
 const About = lazy(() => import("./src/components/About.js"));
 
@@ -24,6 +27,7 @@ const App = () => {
     }
   }, []);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ userName: userName, setUserName }}>
       <div className="app">
         <Header></Header>
@@ -31,6 +35,7 @@ const App = () => {
         <Footer></Footer>
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 

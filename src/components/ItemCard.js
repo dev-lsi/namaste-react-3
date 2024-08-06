@@ -1,14 +1,21 @@
 import { IMAGES_BASE_URL } from "../utils/constants";
 import logo from "../assets/logo.png";
 import Description from "./Description.js"
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice.js";
 
 const ItemCard = ({ itemData }) => {
   
   const {name, description, isVeg, price, inStock, serves, ratings, defaultPrice} = itemData.card.info;
+
+  const dispatch=useDispatch()
   
+  const handleAddItem = () => dispatch(addItem({name}))
 
   return (
-    <div className="item">
+    <div className="item"
+         onClick={handleAddItem}
+    >
       {/* Item INFO --> LEFT SECTION name  description isVeg price inStock */}
       <div className="item-info">
         <h2 className="name">{name}</h2>
