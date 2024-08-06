@@ -3,9 +3,7 @@ import logo from "../assets/logo.png";
 import Description from "./Description.js"
 
 const ItemCard = ({ itemData }) => {
-
-  //console.log(itemData.card.info)
-  //const isImage = itemData.card.info.imageId;
+  
   const {name, description, isVeg, price, inStock, serves, ratings, defaultPrice} = itemData.card.info;
   
 

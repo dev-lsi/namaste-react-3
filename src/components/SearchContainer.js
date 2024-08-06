@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-
+import { useState, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 
 const SearchContainer=(props)=>{
     const {restaurants,setFiltered}=props;
     const [searchText,setSearchText] = useState("");
     
+    const {userName,setUserName} = useContext(UserContext);
 
-
-    return (
+    const searchContainer= (
         <div className={'search-container'}>
           <input className="search-input" 
                  type="text" 
@@ -22,8 +22,19 @@ const SearchContainer=(props)=>{
           >
             Search
           </button>
+          
+          <input type={"text"}
+                value={userName}
+                onChange={(e)=>{setUserName(e.target.value)}}>
+          </input>
+          
+          
+          
         </div>
     )
+
+    return searchContainer
+           
 }
 
 export default SearchContainer;

@@ -1,12 +1,17 @@
 import ImageLoader from "./ImageLoader";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import UserContext  from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
   const { name, image, cuisines, rating, deliveryTime, id } = props;
-
+  const {userName} = useContext(UserContext);
+  
+ 
   return (
-  <Link to={`/restaurants/${id}`} className="restaurant-card">
-    
+  <Link to={`/restaurants/${id}`} 
+        className ="restaurant-card"
+      >
       
       <ImageLoader  image={image} />
      
@@ -33,6 +38,14 @@ const RestaurantCard = (props) => {
         <h3>
           {cuisines}
         </h3>
+        <h4>{userName}</h4>
+       
+        
+        
+        
+          
+       
+       
         
       </div>
     

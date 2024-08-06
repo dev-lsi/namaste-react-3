@@ -13,7 +13,7 @@
     animation: apear 3s linear;
     background-image:url("./src/assets/paper01.png");
     object-fit:cover;
-    object-position: center;
+    object-position: bottom;
     overflow: hidden;
 }
 
@@ -69,14 +69,21 @@
 }
 
 .item .description-header{
-    color:rgb(17, 76, 1);
+    width:8em;
+    text-align: center;
+    color:rgb(229, 236, 227);
+    background-color: rgba(0,0,0, 0.6);
+    padding-block: 0.4em;
+    padding-left: 0.4em;
+    cursor: pointer;
+    border-radius: 0.6em;
 }
 
 .description-text{
-    background-color: rgba(255,255,255, 0.9);
+    background-color: rgba(255,255,255, 0.6);
     padding-left: 2em;
     padding-block: 0.6em;
-    color:rgb(14, 1, 55);
+    color:rgb(9, 0, 37);
     line-height: 1.2em;
     animation : apear 2s linear,
                expand 1s linear,
@@ -103,7 +110,7 @@
 }
 
 .get-out{
-    animation: get-out 1.2s ease-in-out;
+    animation: get-out 6s ease-in-out;
 }
     
 

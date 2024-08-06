@@ -2,10 +2,13 @@
 import { Link } from "react-router-dom";
 import logo  from "../assets/logo.png";
 import useNetworkStatus from "../utils/useNetworkStatus.js";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext.js";
 
 const Header = () => {
 
   const netStatus = useNetworkStatus();
+  const userContext = useContext(UserContext);
     
   return (
       <div className="header">
@@ -27,7 +30,9 @@ const Header = () => {
         <div className="header-actions">
         <button className="login-btn">Login</button>
         {netStatus ? <span>online:✅</span>: <span>offline🔴</span>}
+        <h4>{userContext.userName}</h4>
         </div>
+        
         
       </div>
     );

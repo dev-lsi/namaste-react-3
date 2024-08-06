@@ -20,16 +20,21 @@ const Category = ({ categoryData, categoryIndex,setOpenIndex,openIndex }) => {
   return (
     <div className="category" id={category.title}>
       
-      <div className="category-header">
-        {/* <a className="anchor-wraper" href={`#${category.title}`}> */}
-        <h1 className="category-title" onClick={(e)=>{
+      <div className="category-header" onClick={(e)=>{
             const rect = e.target.getBoundingClientRect();
-            const scrollTop = window.scrollY;
-            window.scrollTo( 0 ,0-(rect.top + scrollTop));
+            console.log( "before: "+rect.top)
+            
+            
             if(categoryIndex == openIndex){
               setOpenIndex(null);
-            }else{setOpenIndex(categoryIndex)}
+            }else{setOpenIndex(categoryIndex)
+              window.scrollTo({top:0+rect.top,left:0,behavior:'smooth'});
+              console.log( "after: " + rect.top)
+            }
+            
           }}>
+        {/* <a className="anchor-wraper" href={`#${category.title}`}> */}
+        <h1 className="category-title" >
             {category.title}
           </h1>
           <span>🔻</span>

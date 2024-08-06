@@ -68,6 +68,19 @@
     padding-bottom: 1em;
   }
 
+  .apearCard2{
+    animation : apearCard2 3s ease-in-out;
+  }
+
+  @keyframes apearCard2 {
+    0% {transform:scaleX(20%)}
+    100% {transform: scaleX(100%)}
+  }
+
+  
+
+
+
   .restaurant-card .image-loader{
     width: 12em;
     height:8em;
