@@ -26,7 +26,10 @@ const Header = () => {
             </li>
             <li className="nav-ul-li">
               <Link to={"/contacts"}>Contacts</Link>
-              </li>
+            </li>
+            <li className="nav-ul-li">
+              <Link to={"/cart"}>Cart</Link>
+            </li>
           </ul>
         </nav>
         <div className="header-actions">

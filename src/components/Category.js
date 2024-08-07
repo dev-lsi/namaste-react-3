@@ -11,7 +11,7 @@ const Category = ({ categoryData, categoryIndex,setOpenIndex,openIndex }) => {
       <div className={`category-items`}>
       {itemsData.itemCards.map((i) => {
         const itemID=i.card.info.id;
-        return <ItemCard key={itemID} itemData={i} />;
+        return <ItemCard key={itemID} itemData={i} href={'#'} />;
       })}
       </div>
     )
@@ -22,14 +22,16 @@ const Category = ({ categoryData, categoryIndex,setOpenIndex,openIndex }) => {
       
       <div className="category-header" onClick={(e)=>{
             const rect = e.target.getBoundingClientRect();
-            console.log( "before: "+rect.top)
-            
             
             if(categoryIndex == openIndex){
               setOpenIndex(null);
             }else{setOpenIndex(categoryIndex)
-              window.scrollTo({top:0+rect.top,left:0,behavior:'smooth'});
-              console.log( "after: " + rect.top)
+              window.scrollTo(
+                { top: rect.top <= window.screen.height?rect.top:window.screen.height,
+                  left:0,
+                  behavior:'smooth'
+                });
+              
             }
             
           }}>
