@@ -10,7 +10,7 @@ const Header = () => {
 
   const netStatus = useNetworkStatus();
   const userContext = useContext(UserContext);
-  const cartData = useSelector((store)=>store.cartSlice.items)
+  const cartData = useSelector((store)=>store.cartSlice.obj)
     
   return (
       <div className="header">

@@ -5,27 +5,20 @@ import { useDispatch, useSelector, useStore } from "react-redux";
 import cartSlice, { addItem } from "../utils/cartSlice.js";
 
 const ItemCard = ({ itemData }) => {
-  
-  const {name, description, isVeg, price,ratings, defaultPrice, imageId} = itemData.card.info;
+  //console.log(itemData)
+  const {name, description, isVeg, price,ratings, defaultPrice, imageId,id} = itemData.card.info;
 
   
 
   const endPrice = price?price:defaultPrice;
-  const imageContainerBackgroundStyle = {
-    width: '8em',
-    height: '8em',
-    backgroundImage: `url(${(IMAGES_BASE_URL + imageId)})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center', 
-    backgroundRepeat: 'no-repeat',
-  };
+  
 
   const dispatch = useDispatch();
-  const cartData=useSelector((x)=>x.cartSlice.items)
+  const cartData = useSelector((x)=>x.cartSlice.items)
   
   const handleAddItem = () => {
-    dispatch(addItem({name,endPrice,imageId}));
-  };
+    dispatch(addItem({id,name,endPrice,imageId,quantity:1}));
+  }
 
   
 
@@ -42,14 +35,14 @@ const ItemCard = ({ itemData }) => {
               :<span className="orange-red"> No</span>
               }
             </h4>
-            <h4>
+            <div>
               {
               ratings.aggregatedRating.rating
               &&<h4>
                 Rating: <span>{ratings.aggregatedRating.rating}</span>
               </h4>
               }
-            </h4>
+            </div>
             <h4>Price:  <span>
                          {price?price:defaultPrice&&defaultPrice}</span>
                         <span className="green"> &#8377;</span> 
@@ -65,9 +58,7 @@ const ItemCard = ({ itemData }) => {
       </div>
       {/* IMAGE CONTAINER --> RIGHT SECTION */}
       
-       <div className="image-container"
-           style={imageContainerBackgroundStyle}
-        >
+       <div className="image-container">
          <img
            className="item-image"
           

@@ -5,7 +5,6 @@ import Footer from "./Footer";
 const ErrorPage=()=>{
     
     const err = useRouteError();
-    console.log(Object.keys(err));
     return (
         <div className="error-page-div">
             <Header/>

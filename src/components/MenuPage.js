@@ -10,22 +10,18 @@ const MenuPage = () => {
   const restaurantId = useParams();
 
   const menuData = useMenu(restaurantId);
-  //console.log(menuData);
 
   const extractData = (data) => {
     const allCards =
       data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-    //console.log(allCards);
 
     const rCategories = allCards.filter(
       (c) =>
         c?.card?.card["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-    //console.log(rCategories);
 
     const rInfo = data?.cards[2]?.card?.card?.info;
-    //console.log(rInfo);
 
     return (
       //creating menu page

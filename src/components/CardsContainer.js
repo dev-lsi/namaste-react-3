@@ -16,10 +16,8 @@ const CardsContainer = (props) => {
     
     const io = new IntersectionObserver((el)=>{
       if (el.isIntersecting) {
-        console.log('card apeared in view')
         el.className= "cards-container apearCard2";
       } else {
-        console.log('card removed from view')
         el.className = "cards-container";
       }
     },{threshold:0.1,root:document});

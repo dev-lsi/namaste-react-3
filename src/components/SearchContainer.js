@@ -17,7 +17,6 @@ const SearchContainer=(props)=>{
                  onChange={(e)=>setSearchText(e.target.value)} 
           ></input>
           <button className="search-btn" onClick={()=>{
-            console.log('handleClick');
             setFiltered(restaurants.filter(x=>x.info.name.includes(searchText)));}}
           >
             Search
